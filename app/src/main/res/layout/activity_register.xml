@@ -28,7 +28,7 @@
                 android:layout_height="match_parent"
                 android:drawableRight="@drawable/ic_email"
                 android:hint="아이디"
-                android:inputType="textPersonName" />
+                android:inputType="text"/>
 
         </LinearLayout>
 
@@ -45,7 +45,7 @@
                 android:layout_height="wrap_content"
                 android:drawableRight="@drawable/ic_key"
                 android:hint="비밀번호"
-                android:inputType="text" />
+                android:inputType="textPassword"/>
 
         </LinearLayout>
 
@@ -62,7 +62,7 @@
                 android:layout_height="wrap_content"
                 android:drawableRight="@drawable/ic_person"
                 android:hint="이름"
-                android:inputType="textEmailAddress" />
+                android:inputType="text"/>
 
         </LinearLayout>
 
@@ -79,7 +79,7 @@
                 android:layout_height="wrap_content"
                 android:drawableRight="@drawable/ic_age"
                 android:hint="나이"
-                android:inputType="textPassword" />
+                android:inputType="text"/>
 
         </LinearLayout>
 
@@ -96,7 +96,7 @@
                 android:layout_height="wrap_content"
                 android:drawableRight="@drawable/ic_language"
                 android:hint="사용가능언어"
-                android:inputType="text" />
+                android:inputType="text"/>
 
         </LinearLayout>
 
@@ -113,7 +113,7 @@
                 android:layout_height="wrap_content"
                 android:drawableRight="@drawable/ic_home"
                 android:hint="활동지역"
-                android:inputType="text" />
+                android:inputType="text"/>
 
         </LinearLayout>
         <android.support.v7.widget.AppCompatButton

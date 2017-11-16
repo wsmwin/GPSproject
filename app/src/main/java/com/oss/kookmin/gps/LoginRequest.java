@@ -12,11 +12,11 @@ import java.util.Map;
 
 public class LoginRequest extends StringRequest{
 
-    final static private String URL1 = "http://kookmingps.cafe24.com/Login.php";
+    final static private String URL = "http://kookmingps.cafe24.com/Login.php";
     private Map<String, String> parameters;
 
     public LoginRequest(String userID, String userPassword, Response.Listener<String> listener) {
-        super(Method.POST, URL1, listener, null);
+        super(Method.POST, URL, listener, null);
         parameters = new HashMap<>();
         parameters.put("userID", userID);
         parameters.put("userPassword", userPassword);
