@@ -16,10 +16,12 @@ public class UserListAdapter extends BaseAdapter {
 
     private Context context;
     private List<User> userList;
+    private List<User> saveList;
 
-    public UserListAdapter(Context context, List<User> userList) {
+    public UserListAdapter(Context context, List<User> userList, List<User> saveList) {
         this.context = context;
         this.userList = userList;
+        this.saveList = saveList;
     }
 
     @Override

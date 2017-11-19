@@ -33,10 +33,10 @@ public class MainActivity extends AppCompatActivity {
         idText.setText(userID);
         welcomeMessage.setText(message);
 
-        if(!userID.equals("admin"))
+        /*if(!userID.equals("admin"))
         {
             managementButton.setVisibility(View.GONE);
-        }
+        }*/
 
         managementButton.setOnClickListener(new View.OnClickListener() {
             @Override
