@@ -57,6 +57,7 @@ public class ManagementActivity extends AppCompatActivity {
         }
 
         EditText search = (EditText) findViewById(R.id.search);
+        EditText search0 = (EditText) findViewById(R.id.search0);
         search.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
@@ -73,12 +74,39 @@ public class ManagementActivity extends AppCompatActivity {
 
             }
         });
+        search0.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                searchUser0(charSequence.toString());
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+
+            }
+        });
     }
 
     public void searchUser(String search) {
         userList.clear();;
         for(int i = 0; i< saveList.size(); i++) {
             if(saveList.get(i).getUserResidence().contains(search))
+            {
+                userList.add(saveList.get(i));
+            }
+            adapter.notifyDataSetChanged();
+        }
+    }
+
+    public void searchUser0(String search) {
+        userList.clear();;
+        for(int i = 0; i< saveList.size(); i++) {
+            if(saveList.get(i).getUserLanguage().contains(search))
             {
                 userList.add(saveList.get(i));
             }

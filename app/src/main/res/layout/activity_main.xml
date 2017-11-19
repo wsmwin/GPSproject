@@ -12,18 +12,17 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="TextView"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+        android:textSize="33dp"
+        android:textStyle="bold"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"/>
 
     <Button
         android:id="@+id/managementButton"
         android:layout_marginTop="77dp"
         android:text="회원검색"
         android:background="@color/colorPrimary"
+        android:textSize="20dp"
+        android:textStyle="bold"
         android:textColor="@android:color/white"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
@@ -31,8 +30,10 @@
     <Button
         android:id="@+id/chattingButton"
         android:layout_marginTop="20dp"
-        android:text="채팅하기"
+        android:text="채팅시작"
         android:background="@color/colorPrimary"
+        android:textSize="20dp"
+        android:textStyle="bold"
         android:textColor="@android:color/white"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
