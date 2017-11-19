@@ -20,7 +20,9 @@
         </activity>
         <activity android:name=".RegisterActivity" />
         <activity android:name=".MainActivity" />
-        <activity android:name=".ManagementActivity"></activity>
+        <activity android:name=".ManagementActivity" />
+        <activity android:name=".StartActivity" />
+        <activity android:name=".ChatActivity"></activity>
     </application>
 
 </manifest>

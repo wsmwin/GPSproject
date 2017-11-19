@@ -22,26 +22,27 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        TextView idText = (TextView) findViewById(R.id.idText);
         TextView welcomeMessage = (TextView) findViewById(R.id.welcomeMessage);
         Button managementButton = (Button) findViewById(R.id.managementButton);
+        Button chattingButton = (Button) findViewById(R.id.chattingButton);
 
         Intent intent = getIntent();
         String userID = intent.getStringExtra("userID");
-        String message = "환영합니다!! ^ㅇ^";
+        String message = "환영합니다!!!\n" + userID + "님 ^ㅇ^";
 
-        idText.setText(userID);
         welcomeMessage.setText(message);
-
-        /*if(!userID.equals("admin"))
-        {
-            managementButton.setVisibility(View.GONE);
-        }*/
 
         managementButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 new BackgroundTask().execute();
+            }
+        });
+
+        chattingButton.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View v) {
+                Intent intent1 = new Intent(getApplicationContext(), StartActivity.class);
+                startActivity(intent1);
             }
         });
     }
