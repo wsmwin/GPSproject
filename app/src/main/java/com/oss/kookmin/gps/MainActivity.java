@@ -25,6 +25,7 @@ public class MainActivity extends AppCompatActivity {
         TextView welcomeMessage = (TextView) findViewById(R.id.welcomeMessage);
         Button managementButton = (Button) findViewById(R.id.managementButton);
         Button chattingButton = (Button) findViewById(R.id.chattingButton);
+        Button mapButton = (Button) findViewById(R.id.mapButton);
 
         Intent intent = getIntent();
         String userID = intent.getStringExtra("userID");
@@ -43,6 +44,13 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent1 = new Intent(getApplicationContext(), StartActivity.class);
                 startActivity(intent1);
+            }
+        });
+
+        mapButton.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View v) {
+                Intent intent2 = new Intent(getApplicationContext(), MapActivity.class);
+                startActivity(intent2);
             }
         });
     }

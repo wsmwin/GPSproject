@@ -78,7 +78,7 @@
                 android:layout_height="wrap_content"
                 android:drawableRight="@drawable/ic_key"
                 android:hint="비밀번호"
-                android:inputType="text" />
+                android:inputType="textPassword" />
 
         </LinearLayout>
 

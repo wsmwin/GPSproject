@@ -15,6 +15,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "161211065201-i63g5lb2sp96bo0eh4a5lh1nam7nts50.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.oss.kookmin.gps",
+            "certificate_hash": "ab1cfebe9beac6062cd5b908f5cc81469165e76a"
+          }
+        },
+        {
           "client_id": "161211065201-e1p041s9uteudicqbdtt6q9nj7h7s9ud.apps.googleusercontent.com",
           "client_type": 3
         }
@@ -29,8 +37,13 @@
           "status": 1
         },
         "appinvite_service": {
-          "status": 1,
-          "other_platform_oauth_client": []
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "161211065201-e1p041s9uteudicqbdtt6q9nj7h7s9ud.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
         },
         "ads_service": {
           "status": 2
