@@ -28,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
         Button mapButton = (Button) findViewById(R.id.mapButton);
 
         Intent intent = getIntent();
-        String userID = intent.getStringExtra("userID");
+        final String userID = intent.getStringExtra("userID");
         String message = "환영합니다!!!\n" + userID + "님 ^ㅇ^";
 
         welcomeMessage.setText(message);
@@ -43,6 +43,7 @@ public class MainActivity extends AppCompatActivity {
         chattingButton.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v) {
                 Intent intent1 = new Intent(getApplicationContext(), StartActivity.class);
+                intent1.putExtra("userID", userID);
                 startActivity(intent1);
             }
         });
@@ -50,6 +51,7 @@ public class MainActivity extends AppCompatActivity {
         mapButton.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v) {
                 Intent intent2 = new Intent(getApplicationContext(), MapActivity.class);
+                intent2.putExtra("userID", userID);
                 startActivity(intent2);
             }
         });

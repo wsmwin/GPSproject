@@ -24,7 +24,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="24dp"
+                android:textSize="27dp"
                 android:text="채팅방 입장 또는 새로 만들기"
                 android:textStyle="bold"
                 android:layout_marginBottom="20dp"
@@ -32,30 +32,21 @@
 
             <EditText
                 android:id="@+id/user_chat"
-                android:layout_width="240dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="left"
                 android:layout_marginBottom="20dp"
                 android:gravity="center"
                 android:hint="채팅방 이름"
+                android:textSize="22dp"
                 android:inputType="textPersonName" />
-
-            <EditText
-                android:id="@+id/user_edit"
-                android:layout_width="240dp"
-                android:layout_height="wrap_content"
-                android:inputType="textPersonName"
-                android:hint="닉네임"
-                android:layout_gravity="right"
-                android:gravity="center"
-                android:layout_marginBottom="20dp"/>
 
             <Button
                 android:id="@+id/user_next"
                 android:layout_width="127dp"
                 android:layout_height="wrap_content"
-                android:textSize="22dp"
-                android:textStyle="italic"
+                android:textSize="25dp"
+                android:textStyle="bold"
                 android:text="접속하기"
                 android:layout_weight="0.11" />
 
@@ -68,7 +59,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="24dp"
+                android:textSize="27dp"
                 android:text="현재 개설된 채팅방"
                 android:textStyle="bold"
                 android:layout_marginBottom="20dp"
