@@ -1,9 +1,12 @@
 package com.oss.kookmin.gps;
 
+import android.content.Intent;
 import android.location.Location;
 import android.location.LocationListener;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -37,6 +40,27 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         ChildEventListener mChildEventListener;
         mUsers= FirebaseDatabase.getInstance().getReference("Users");
         mUsers.push().setValue(marker);
+
+        Button wardingButton = (Button) findViewById(R.id.wardingButton);
+        Button chattingButton = (Button) findViewById(R.id.chattingButton);
+
+        wardingButton.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View v) {
+                Intent intent1 = new Intent(getApplicationContext(), MapActivity.class);
+                startActivity(intent1);
+            }
+        });
+
+        Intent intent2 = getIntent();
+        final String userID = intent2.getStringExtra("userID");
+
+        chattingButton.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View v) {
+                Intent intent2 = new Intent(getApplicationContext(), StartActivity.class);
+                intent2.putExtra("userID", userID);
+                startActivity(intent2);
+            }
+        });
     }
 
 

@@ -50,7 +50,7 @@ public class MainActivity extends AppCompatActivity {
 
         mapButton.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v) {
-                Intent intent2 = new Intent(getApplicationContext(), MapActivity.class);
+                Intent intent2 = new Intent(getApplicationContext(), MapsActivity.class);
                 intent2.putExtra("userID", userID);
                 startActivity(intent2);
             }
