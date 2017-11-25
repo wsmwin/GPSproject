@@ -1,9 +1,5 @@
 package com.oss.kookmin.gps;
 
-/**
- * Created by Woo on 2017-11-20.
- */
-
 public class UserInformation {
 
     public String name;

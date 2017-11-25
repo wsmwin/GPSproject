@@ -38,41 +38,32 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
         ChildEventListener mChildEventListener;
-        mUsers= FirebaseDatabase.getInstance().getReference("Users");
+        mUsers= FirebaseDatabase.getInstance().getReference("Users").child("Users");
         mUsers.push().setValue(marker);
 
         Button wardingButton = (Button) findViewById(R.id.wardingButton);
         Button chattingButton = (Button) findViewById(R.id.chattingButton);
 
+        Intent intent = getIntent();
+        final String userID = intent.getStringExtra("userID");
+
         wardingButton.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v) {
-                Intent intent1 = new Intent(getApplicationContext(), MapActivity.class);
-                startActivity(intent1);
+                Intent intent = new Intent(getApplicationContext(), MapActivity.class);
+                intent.putExtra("userID", userID);
+                startActivity(intent);
             }
         });
 
-        Intent intent2 = getIntent();
-        final String userID = intent2.getStringExtra("userID");
-
         chattingButton.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v) {
-                Intent intent2 = new Intent(getApplicationContext(), StartActivity.class);
-                intent2.putExtra("userID", userID);
-                startActivity(intent2);
+                Intent intent = new Intent(getApplicationContext(), StartActivity.class);
+                intent.putExtra("userID", userID);
+                startActivity(intent);
             }
         });
     }
 
-
-    /**
-     * Manipulates the map once available.
-     * This callback is triggered when the map is ready to be used.
-     * This is where we can add markers or lines, add listeners or move the camera. In this case,
-     * we just add a marker near Sydney, Australia.
-     * If Google Play services is not installed on the device, the user will be prompted to install
-     * it inside the SupportMapFragment. This method will only be triggered once the user has
-     * installed Google Play services and returned to the app.
-     */
     @Override
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;

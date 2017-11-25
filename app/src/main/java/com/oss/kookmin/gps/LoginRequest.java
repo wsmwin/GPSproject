@@ -6,10 +6,6 @@ import com.android.volley.toolbox.StringRequest;
 import java.util.HashMap;
 import java.util.Map;
 
-/**
- * Created by Woo on 2017-11-15.
- */
-
 public class LoginRequest extends StringRequest{
 
     final static private String URL = "http://kookmingps.cafe24.com/Login.php";

@@ -8,10 +8,6 @@ import android.widget.TextView;
 
 import java.util.List;
 
-/**
- * Created by Woo on 2017-11-16.
- */
-
 public class UserListAdapter extends BaseAdapter {
 
     private Context context;

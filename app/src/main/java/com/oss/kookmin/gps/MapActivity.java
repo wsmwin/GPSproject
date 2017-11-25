@@ -31,19 +31,27 @@ public class MapActivity extends AppCompatActivity implements View.OnClickListen
         btnsave=(Button)findViewById(R.id.btnsave);
         btnsave.setOnClickListener(this);
         btnproceed.setOnClickListener(new View.OnClickListener() {
+
+            Intent intent = getIntent();
+            final String userID = intent.getStringExtra("userID");
+
+
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(MapActivity.this, MapsActivity.class);
+                i.putExtra("userID", userID);
                 startActivity(i);
             }
         });
     }
     private void saveUserInformation(){
-        String name = editTextName.getText().toString().trim();
+        Intent intent = getIntent();
+        final String userID = intent.getStringExtra("userID");
+        String name = editTextName.getText().toString().trim()+"_"+userID;
         double latitude=Double.parseDouble(editTextLatitude.getText().toString().trim());
         double longitude=Double.parseDouble(editTextLongitude.getText().toString().trim());
         UserInformation userInformation=new UserInformation(name,latitude,longitude);
-        mDatabase.child("Users").setValue(userInformation);
+        mDatabase.child("Users").child(name).setValue(userInformation);
         Toast.makeText(this, "Saved", Toast.LENGTH_LONG).show();
     }
     @Override

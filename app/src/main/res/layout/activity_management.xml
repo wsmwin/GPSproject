@@ -12,7 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/search0"
-        android:hint="사용가능언어별 검색"/>
+        android:hint="사용가능 언어별 검색"/>
 
     <EditText
         android:layout_width="match_parent"
