@@ -1,6 +1,7 @@
 package com.oss.kookmin.gps;
 
 import android.content.Intent;
+import android.location.Geocoder;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -8,6 +9,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.google.android.gms.maps.model.LatLng;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -30,11 +32,11 @@ public class MapActivity extends AppCompatActivity implements View.OnClickListen
         editTextLongitude=(EditText)findViewById(R.id.editTextLongitude);
         btnsave=(Button)findViewById(R.id.btnsave);
         btnsave.setOnClickListener(this);
+
         btnproceed.setOnClickListener(new View.OnClickListener() {
 
             Intent intent = getIntent();
             final String userID = intent.getStringExtra("userID");
-
 
             @Override
             public void onClick(View v) {
@@ -66,4 +68,5 @@ public class MapActivity extends AppCompatActivity implements View.OnClickListen
             editTextLongitude.getText().clear();
         }
     }
+
 }
