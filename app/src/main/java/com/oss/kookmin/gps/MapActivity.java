@@ -53,7 +53,7 @@ public class MapActivity extends AppCompatActivity implements View.OnClickListen
         double latitude=Double.parseDouble(editTextLatitude.getText().toString().trim());
         double longitude=Double.parseDouble(editTextLongitude.getText().toString().trim());
         UserInformation userInformation=new UserInformation(name,latitude,longitude);
-        mDatabase.child("Users").child(name).setValue(userInformation);
+        mDatabase.child("Users").child(userID).setValue(userInformation);
         Toast.makeText(this, "Saved", Toast.LENGTH_LONG).show();
     }
     @Override
