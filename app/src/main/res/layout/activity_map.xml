@@ -1,57 +1,108 @@
-<?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_marginLeft="40dp"
+    android:layout_marginRight="40dp"
+    android:gravity="center"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.oss.kookmin.gps.MapActivity">
+    android:weightSum="1">
+
+    <EditText
+        android:id="@+id/et_GeoInput"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="25dp"
+        android:textSize="18dp"
+        android:hint="주소를 입력하세요" />
+
+    <Button
+        android:id="@+id/btn_GeoStart"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/et_GeoInput"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="25dp"
+        android:background="@color/colorPrimary"
+        android:text="변경하기"
+        android:textColor="@android:color/white"
+        android:textSize="20dp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tv_GeoTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/btn_GeoStart"
+        android:layout_marginTop="25dp"
+        android:layout_marginBottom="25dp"
+        android:textSize="18dp"
+        android:text="변경하기 버튼을 눌러주세요" />
+
     <EditText
         android:id="@+id/editTextName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Name"
-        android:layout_alignParentTop="true"
+        android:hint="와드에 들어갈 내용"
+        android:layout_above="@+id/editTextLatitude"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_marginTop="43dp" />
+        android:textSize="18dp"
+        android:layout_marginBottom="15dp" />
 
     <EditText
         android:id="@+id/editTextLatitude"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="13dp"
-        android:hint="Latitude"
         android:layout_above="@+id/editTextLongitude"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="15dp"
+        android:textSize="18dp"
+        android:hint="위도" />
 
     <EditText
         android:id="@+id/editTextLongitude"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:hint="경도"
+        android:layout_marginBottom="15dp"
         android:layout_above="@+id/btnsave"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_marginBottom="92dp"
-        android:hint="Longitude" />
+        android:textSize="18dp" />
 
     <Button
         android:id="@+id/btnsave"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="23dp"
-        android:text="save"
         android:layout_above="@+id/btnproceed"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignLeft="@+id/btn_GeoStart"
+        android:layout_alignStart="@+id/btn_GeoStart"
+        android:layout_marginBottom="24dp"
+        android:background="@color/colorPrimary"
+        android:text="와드박기"
+        android:textColor="@android:color/white"
+        android:textSize="20dp"
+        android:textStyle="bold" />
 
     <Button
         android:id="@+id/btnproceed"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/btnsave"
         android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginBottom="97dp"
-        android:text="proceed" />
-</RelativeLayout>
+        android:layout_alignStart="@+id/btnsave"
+        android:layout_marginBottom="41dp"
+        android:background="@color/colorPrimary"
+        android:text="지도보기"
+        android:textColor="@android:color/white"
+        android:textSize="20dp"
+        android:textStyle="bold" />
+</LinearLayout>
