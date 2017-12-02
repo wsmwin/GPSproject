@@ -7,7 +7,9 @@
     android:paddingTop="5dp"
     android:paddingBottom="5dp"
     android:background="#ffffff">
-
+<!--
+    회원검색을 할 때 각각의 것들에 들어갈 회원을 보여줄 수 있는 화면을 구성한다.
+-->
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

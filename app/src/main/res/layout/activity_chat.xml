@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.oss.kookmin.gps.ChatActivity">
-
-
+<!--
+    채팅방 입장했을 때 채팅한 것들을 리스트로 추가하면서 보여줄 수 있도록 채팅방 화면 구성
+    리스트(채팅내용 보여주는 화면)과 입력할 수 있는 입력창과 전송 버튼으로 화면 구성되어 있음
+-->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -43,4 +45,4 @@
 
     </LinearLayout>
 
-</RelativeLayout>
+</LinearLayout>

@@ -6,6 +6,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:weightSum="1">
+<!--
+    지도화면에 와드를 박을 수 있는 화면으로, 크게 보면 위에는 주소를 입력해서 위도, 경도의 좌표로 바꿔주는 것이 있고
+    밑에는 와드에 들어갈 내용과 그 위치를 설정할 수 있도록 되어 있다.
+-->
 
     <EditText
         android:id="@+id/et_GeoInput"

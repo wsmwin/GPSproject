@@ -7,7 +7,10 @@
     android:orientation="vertical"
     android:background="#d1d1d1"
     tools:context="com.oss.kookmin.gps.ManagementActivity">
-
+<!--
+    회원 검색 기능을 수행하는 화면으로, 밑에는 모든 가입자의 내용을 보여주기 위한 리스트가 있고
+    위에는 그 리스트를 검색 조건에 따라 검색할 수 있도록 검색할 텍스트를 입력하는 것이 있다.
+-->
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

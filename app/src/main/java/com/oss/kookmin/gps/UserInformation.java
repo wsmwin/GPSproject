@@ -1,5 +1,5 @@
 package com.oss.kookmin.gps;
-
+//와드를 박을 때 쓰일 UserInformation클레스이다.
 public class UserInformation {
 
     public String name;

@@ -6,7 +6,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:weightSum="1">
-
+<!--
+   지도 api를 받아올 fragment와 밑에 버튼 3개를 구성하여 지도를 보다가 다른 기능을 수행할 수 있도록 하였다.
+-->
     <fragment
         android:id="@+id/map"
         android:name="com.google.android.gms.maps.SupportMapFragment"

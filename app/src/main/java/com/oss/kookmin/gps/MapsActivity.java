@@ -79,7 +79,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             }
         });
     }
-
+    //구글맵 생성과 함께 와드도 박아주기
     @Override
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
@@ -121,7 +121,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     public void onProviderDisabled(String provider) {
 
     }
-
+    //마커 클릭 시 실행될 것
     @Override
     public boolean onMarkerClick(Marker marker) {
         return false;

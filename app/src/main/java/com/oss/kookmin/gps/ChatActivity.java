@@ -17,14 +17,14 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 public class ChatActivity extends AppCompatActivity {
-
+//변수지정.
     private String CHAT_NAME;
     private String USER_NAME;
 
     private ListView chat_view;
     private EditText chat_edit;
     private Button chat_send;
-
+//파이어베이스 가져오기
     private FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
     private DatabaseReference databaseReference = firebaseDatabase.getReference();
 

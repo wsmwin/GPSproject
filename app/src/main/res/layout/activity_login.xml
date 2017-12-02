@@ -7,6 +7,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:weightSum="1">
+<!--
+    첫 화면으로 프로젝트 이름(GPS)와 그 이름 소개(Global Partner Searching)을 보여주고
+    그 밑에서 아이디와 비밀번호를 입력받아 로그인할 수 있는 것과,
+    회원가입을 하고 싶을 시 회원가입버튼으로 구성됨
+-->
 
     <LinearLayout
         android:layout_width="match_parent"

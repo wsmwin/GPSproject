@@ -1,5 +1,5 @@
 package com.oss.kookmin.gps;
-
+//회원목록에서 각 회원에게 들어갈 5개의 값들을 넣어 줄 수 있도록 만든 클레스
 public class User {
 
     String userID;

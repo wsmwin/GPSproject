@@ -7,7 +7,9 @@
     tools:context="com.oss.kookmin.gps.StartActivity"
     tools:layout_editor_absoluteY="81dp"
     tools:layout_editor_absoluteX="0dp">
-
+<!--
+    채팅방 입장 화면으로, 원하는 채팅방에 들어갈 수 있도록 보여주었다. 또한 그 밑에는 현재 어떤 채팅방이 개설되어 있는지 보여준다.
+-->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"

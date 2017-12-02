@@ -1,5 +1,5 @@
 package com.oss.kookmin.gps;
-
+//체팅에서 유저아이디와 메세지를 묶어서 보여줄 수 있도록 클레스 생성
 public class ChatDTO {
 
     private String userName;

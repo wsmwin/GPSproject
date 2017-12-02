@@ -21,12 +21,12 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-
+        //각각 담길 내용을 변수 할당해줌
         final EditText idText = (EditText) findViewById(R.id.idText);
         final EditText passwordText = (EditText) findViewById(R.id.passwordText);
         final Button loginButton = (Button) findViewById(R.id.loginButton);
         final TextView registerButton = (TextView) findViewById(R.id.registerButton);
-
+        //회원가입 버튼을 눌렀을 때 회원가입 페이지로 가도록 해줌
         registerButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -34,30 +34,31 @@ public class LoginActivity extends AppCompatActivity {
                 LoginActivity.this.startActivity(registerIntent);
             }
         });
-
+        //로그인 버튼을 눌렀을 때 일어날 일이다.
         loginButton.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View view) {
                 final String userID = idText.getText().toString();
                 final String userPassword = passwordText.getText().toString();
-
+                //리스폰스 내부 클레스로, 인터넷 접속 뒤 레스폰스 건너오면 그 레스폰스 저장해주는 것
                 Response.Listener<String> responseListener = new Response.Listener<String>() {
 
                     @Override
                     public void onResponse(String response) {
                         try {
+                            //onResponse를 override해주는 것으로, json을 통해 값을 success해서 트루값으로 변경해줌
                             JSONObject jsonResponse = new JSONObject(response);
                             boolean success = jsonResponse.getBoolean("success");
+                            //로그인 성공 시 인텐트에 아이디 값을 넣어서 그것을 가지고 메인 화면으로 가도록 해줌
                             if (success) {
                                 String userID = jsonResponse.getString("userID");
-                                String userPassword = jsonResponse.getString("userPassword");
                                 Intent intent = new Intent(LoginActivity.this, MainActivity.class);
                                 intent.putExtra("userID", userID);
-                                intent.putExtra("userPassword", userPassword);
 
                                 LoginActivity.this.startActivity(intent);
                             }
+                            //로그인 실패 시 알림을 띄워줌
                             else {
                                 AlertDialog.Builder builder = new AlertDialog.Builder(LoginActivity.this);
                                 builder.setMessage("로그인에 실패하였습니다.")
@@ -65,15 +66,18 @@ public class LoginActivity extends AppCompatActivity {
                                         .create()
                                         .show();
                             }
+                        //로그인 과정을 수행하다가 오류가 날 경우
                         } catch (Exception e)
                         {
                             e.printStackTrace();
                         }
                     }
                 };
-
+                //LoginRequest클레스를 생성자로 만들어서 큐에 에드한다.
                 LoginRequest loginRequest = new LoginRequest(userID, userPassword, responseListener);
+                //RequestQueue 여기서 리퀘스트 전송하고 레스폰스 가져오는 것
                 RequestQueue queue = Volley.newRequestQueue(LoginActivity.this);
+                // 레스폰스에 로그인 리퀘스트로 넣은 것을 추가해준다.
                 queue.add(loginRequest);
             }
         });

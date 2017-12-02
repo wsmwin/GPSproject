@@ -27,7 +27,7 @@ public class MapActivity extends AppCompatActivity implements View.OnClickListen
     private EditText et_GeoInput;
     private TextView tv_GeopText;
     private Button btn_GeoStart;
-
+//지오코더를 불러 주소를 좌표로 만들 수 있도록!
     Geocoder mGeocoder;
     List<Address> mListAddress;
     Address mAddress;
@@ -57,6 +57,7 @@ public class MapActivity extends AppCompatActivity implements View.OnClickListen
             }
         });
     }
+    //주소를 좌표로 바꿔주는 것 변수 생성
     public void Init()
     {
         et_GeoInput = (EditText)findViewById(R.id.et_GeoInput);
@@ -65,12 +66,12 @@ public class MapActivity extends AppCompatActivity implements View.OnClickListen
         btn_GeoStart.setOnClickListener(this);
         mGeocoder = new Geocoder(this);
     }
-
+    //주소를 좌표로 바꿔보기
     public String SearchLocation(String location)
     {
         String result = "";
         try{
-            mListAddress = mGeocoder.getFromLocationName(location, 5);
+            mListAddress = mGeocoder.getFromLocationName(location, 5); //5개의 위치를 일단 받지만 밑에서 0번째만 사용
             if(mListAddress.size() > 0)
             {
                 mAddress = mListAddress.get(0); // 0 번째 주소값,
@@ -85,7 +86,7 @@ public class MapActivity extends AppCompatActivity implements View.OnClickListen
 
         return result;
     }
-
+    //와드 박기
     private void saveUserInformation(){
         Intent intent = getIntent();
         final String userID = intent.getStringExtra("userID");
@@ -96,7 +97,7 @@ public class MapActivity extends AppCompatActivity implements View.OnClickListen
         mDatabase.child("Users").child(userID).setValue(userInformation);
         Toast.makeText(this, "Saved", Toast.LENGTH_LONG).show();
     }
-
+    //3가지 버튼 클릭 경우 수행될 것 지정
     @Override
     public void onClick(View view) {
             if (view == btnproceed) {
@@ -109,6 +110,7 @@ public class MapActivity extends AppCompatActivity implements View.OnClickListen
                 editTextLongitude.getText().clear();
             }
             if (view == btn_GeoStart) {
+                //주소를 좌표로 찾기 버튼 클릭 시 입력창도 바뀌도록
                 switch (view.getId()) {
                 case R.id.btn_GeoStart:
                     String result = SearchLocation(String.valueOf(et_GeoInput.getText()));
