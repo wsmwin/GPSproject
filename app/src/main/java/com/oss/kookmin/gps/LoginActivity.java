@@ -47,10 +47,10 @@ public class LoginActivity extends AppCompatActivity {
                     @Override
                     public void onResponse(String response) {
                         try {
-                            //onResponse를 override해주는 것으로, json을 통해 값을 success해서 트루값으로 변경해줌
+                            //onResponse를 override해주는 것으로, json 파싱을 통햏 success값이 T/F인지 success boolean변수에 넣어줌
                             JSONObject jsonResponse = new JSONObject(response);
                             boolean success = jsonResponse.getBoolean("success");
-                            //로그인 성공 시 인텐트에 아이디 값을 넣어서 그것을 가지고 메인 화면으로 가도록 해줌
+                            //로그인 성공 시 아이디 데이터를 파싱해서 인텐트에 값을 넣어서 그것을 가지고 메인 화면으로 가도록 해줌
                             if (success) {
                                 String userID = jsonResponse.getString("userID");
                                 Intent intent = new Intent(LoginActivity.this, MainActivity.class);
@@ -77,7 +77,7 @@ public class LoginActivity extends AppCompatActivity {
                 LoginRequest loginRequest = new LoginRequest(userID, userPassword, responseListener);
                 //RequestQueue 여기서 리퀘스트 전송하고 레스폰스 가져오는 것
                 RequestQueue queue = Volley.newRequestQueue(LoginActivity.this);
-                // 레스폰스에 로그인 리퀘스트로 넣은 것을 추가해준다.
+                //레스폰스에 로그인 리퀘스트로 넣은 것을 추가해준다.
                 queue.add(loginRequest);
             }
         });

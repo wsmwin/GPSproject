@@ -40,7 +40,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_maps);
-        // Obtain the SupportMapFragment and get notified when the map is ready to be used.
+        //지도 프래그먼트의 핸들 가져오고, getMapAsync()를 사용하여 지도 콜백을 등록함.
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
@@ -51,7 +51,6 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         Button searchingButton = (Button) findViewById(R.id.searchingButton);
         Button wardingButton = (Button) findViewById(R.id.wardingButton);
         Button chattingButton = (Button) findViewById(R.id.chattingButton);
-
 
         Intent intent = getIntent();
         final String userID = intent.getStringExtra("userID");
@@ -79,7 +78,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             }
         });
     }
-    //구글맵 생성과 함께 와드도 박아주기
+    //구글맵 생성과 함께 firebase child에 있는 데이터 와드 모두 박아주기
     @Override
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
@@ -121,12 +120,11 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     public void onProviderDisabled(String provider) {
 
     }
-    //마커 클릭 시 실행될 것
     @Override
     public boolean onMarkerClick(Marker marker) {
         return false;
     }
-
+    //이 밑부분은 회원목록 검색 부분에서 사용될 것 여기서도 써줬음
     class BackgroundTask extends AsyncTask<Void, Void, String>
     {
         String target;

@@ -27,7 +27,7 @@ public class MapActivity extends AppCompatActivity implements View.OnClickListen
     private EditText et_GeoInput;
     private TextView tv_GeopText;
     private Button btn_GeoStart;
-//지오코더를 불러 주소를 좌표로 만들 수 있도록!
+    //지오코더를 불러 주소를 좌표로 만들 수 있도록!
     Geocoder mGeocoder;
     List<Address> mListAddress;
     Address mAddress;
@@ -95,7 +95,7 @@ public class MapActivity extends AppCompatActivity implements View.OnClickListen
         double longitude=Double.parseDouble(editTextLongitude.getText().toString().trim());
         UserInformation userInformation=new UserInformation(name,latitude,longitude);
         mDatabase.child("Users").child(userID).setValue(userInformation);
-        Toast.makeText(this, "Saved", Toast.LENGTH_LONG).show();
+        Toast.makeText(this, "저장되었습니다", Toast.LENGTH_LONG).show();
     }
     //3가지 버튼 클릭 경우 수행될 것 지정
     @Override

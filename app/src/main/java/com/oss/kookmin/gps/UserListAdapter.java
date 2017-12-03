@@ -44,11 +44,11 @@ public class UserListAdapter extends BaseAdapter {
         TextView userLanguage = (TextView) v.findViewById(R.id.userLanguage);
         TextView userResidence = (TextView) v.findViewById(R.id.userResidence);
 
-        userID.setText(userList.get(i).getUserID());
-        userName.setText(userList.get(i).getUserName());
-        userAge.setText(userList.get(i).getUserAge());
-        userLanguage.setText(userList.get(i).getUserLanguage());
-        userResidence.setText(userList.get(i).getUserResidence());
+        userID.setText("닉넴 : "+userList.get(i).getUserID());
+        userName.setText("이름 : "+userList.get(i).getUserName());
+        userAge.setText("나이 : "+userList.get(i).getUserAge());
+        userLanguage.setText("가능언어 : "+userList.get(i).getUserLanguage());
+        userResidence.setText("활동지역 : "+userList.get(i).getUserResidence());
         //특정 유저 값 반환해주는 것
         v.setTag(userList.get(i).getUserID());
         return v;

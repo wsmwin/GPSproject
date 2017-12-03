@@ -60,9 +60,9 @@ public class ManagementActivity extends AppCompatActivity {
             e.printStackTrace();
         }
         //사용가능언어, 주요활동지 이렇게 두개의 기능 구현
-        EditText search = (EditText) findViewById(R.id.search);
-        EditText search0 = (EditText) findViewById(R.id.search0);
-        search.addTextChangedListener(new TextWatcher() {
+        EditText searchLanguage = (EditText) findViewById(R.id.search);
+        EditText searchResidence = (EditText) findViewById(R.id.search0);
+        searchLanguage.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
 
@@ -70,7 +70,7 @@ public class ManagementActivity extends AppCompatActivity {
             //onTextChanged는 바뀔때마다 실행하는 함수로, 여기서 searchUser를 실행해준다.
             @Override
             public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-                searchUser(charSequence.toString());
+                searchLanguage(charSequence.toString());
             }
 
             @Override
@@ -78,7 +78,7 @@ public class ManagementActivity extends AppCompatActivity {
 
             }
         });
-        search0.addTextChangedListener(new TextWatcher() {
+        searchResidence.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
 
@@ -86,7 +86,7 @@ public class ManagementActivity extends AppCompatActivity {
             //여기도 뭐 기능은 같다.
             @Override
             public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-                searchUser0(charSequence.toString());
+                searchResidence(charSequence.toString());
             }
 
             @Override
@@ -99,7 +99,7 @@ public class ManagementActivity extends AppCompatActivity {
     searchUser함수는 유저리스트 내용은 지워주고 save리스트만큼
     search를 포함하는 경우에만 해당 유저를 추가, 값이 변경되었다는 함수 추가해주면 됨
 */
-    public void searchUser(String search) {
+    public void searchLanguage(String search) {
         userList.clear();
         for(int i = 0; i< saveList.size(); i++) {
             if(saveList.get(i).getUserResidence().contains(search))
@@ -110,7 +110,7 @@ public class ManagementActivity extends AppCompatActivity {
         }
     }
 
-    public void searchUser0(String search) {
+    public void searchResidence(String search) {
         userList.clear();
         for(int i = 0; i< saveList.size(); i++) {
             if(saveList.get(i).getUserLanguage().contains(search))

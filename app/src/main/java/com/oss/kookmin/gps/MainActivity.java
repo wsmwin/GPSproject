@@ -55,7 +55,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
-    //회원가입 부분에서 쓰일 AsyncTask를 이용한 회원불러오기 기능
+    //회원검색 부분에서 쓰일 AsyncTask를 이용한 회원불러오기 기능
     class BackgroundTask extends AsyncTask<Void, Void, String>
     {
         String target;

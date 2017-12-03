@@ -32,7 +32,7 @@
 
     <Button
         android:id="@+id/chattingButton"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="40dp"
         android:text="채팅시작"
         android:background="@color/colorPrimary"
         android:textSize="20dp"
@@ -43,7 +43,7 @@
 
     <Button
         android:id="@+id/mapButton"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="40dp"
         android:text="지도보기"
         android:background="@color/colorPrimary"
         android:textSize="20dp"
