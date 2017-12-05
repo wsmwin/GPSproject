@@ -51,9 +51,9 @@ public class MapActivity extends AppCompatActivity implements View.OnClickListen
 
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(MapActivity.this, MapsActivity.class);
-                i.putExtra("userID", userID);
-                startActivity(i);
+                Intent intent = new Intent(MapActivity.this, MapsActivity.class);
+                intent.putExtra("userID", userID);
+                startActivity(intent);
             }
         });
     }

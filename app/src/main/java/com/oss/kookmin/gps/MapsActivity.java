@@ -9,7 +9,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
@@ -43,7 +42,9 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         //지도 프래그먼트의 핸들 가져오고, getMapAsync()를 사용하여 지도 콜백을 등록함.
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
+
         mapFragment.getMapAsync(this);
+
         ChildEventListener mChildEventListener;
         mUsers= FirebaseDatabase.getInstance().getReference("Users").child("Users");
         mUsers.push().setValue(marker);
@@ -57,7 +58,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
         searchingButton.setOnClickListener(new View.OnClickListener(){
             @Override
-            public void onClick(View view) {
+            public void onClick(View v) {
                 new BackgroundTask().execute();
             }
         });
@@ -87,7 +88,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         mUsers.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                for (DataSnapshot s : dataSnapshot.getChildren()){
+                for (DataSnapshot s : dataSnapshot.getChildren()){  //DataSnapshot은 특정 데이터베이스에 있던 데이터를 촬영한 사진과 같음
                     UserInformation user = s.getValue(UserInformation.class);
                     LatLng location=new LatLng(user.latitude,user.longitude);
                     mMap.addMarker(new MarkerOptions().position(location).title(user.name)).setIcon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_YELLOW));

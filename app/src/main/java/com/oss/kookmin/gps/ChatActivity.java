@@ -77,7 +77,9 @@ public class ChatActivity extends AppCompatActivity {
                 = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, android.R.id.text1);
         chat_view.setAdapter(adapter);
 
-        // 데이터 받아오기 및 어댑터 데이터 추가 및 삭제 등..리스너 관리
+        /* 데이터 받아오기 및 어댑터 데이터 추가 및 삭제 등.. 리스너 관리
+         * child("chat")은 파이어베이스 데이터베이스의 루트 바로 밑에있는 'chat'를 선택한다는 뜻 (없으면 자동으로 생성한다.)
+         * child(chatName)은 생성 or 입장할 '채팅 방 이름'이다. */
         databaseReference.child("chat").child(chatName).addChildEventListener(new ChildEventListener() {
             @Override
             public void onChildAdded(DataSnapshot dataSnapshot, String s) {

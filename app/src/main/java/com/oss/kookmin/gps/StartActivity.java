@@ -17,11 +17,11 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 public class StartActivity extends AppCompatActivity {
-//변수지정
+    //변수지정
     private EditText user_chat;
     private Button user_next;
     private ListView chat_list;
-//파이어베이스 불러옴
+    //파이어베이스 불러옴
     private FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
     private DatabaseReference databaseReference = firebaseDatabase.getReference();
 
@@ -34,8 +34,8 @@ public class StartActivity extends AppCompatActivity {
         user_next = (Button) findViewById(R.id.user_next);
         chat_list = (ListView) findViewById(R.id.chat_list);
 
-        Intent intent1 = getIntent();
-        final String userID = intent1.getStringExtra("userID");
+        Intent intent = getIntent();
+        final String userID = intent.getStringExtra("userID");
         //체팅방 들어갈 때 버튼 클릭시 수행될 것으로, 체팅방 이름과 아이디를 가지고 넘어간다.
         user_next.setOnClickListener(new View.OnClickListener() {
             @Override
